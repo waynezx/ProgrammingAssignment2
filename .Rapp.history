@@ -1,0 +1,618 @@
+pollutantmean <- function(directory, pollutant, id = 1:332){#
+  fullfiles <- list.files(directory, full.names = TRUE)#
+  datatable <-data.frame()#
+  for (i in id){#
+    datatable<-rbind(datatable, read.csv(fullfiles[i]))#
+  }#
+  mean(datatable[,pollutant],na.rm=TRUE)#
+}
+pollutantmean("specdata", "sulfate", 1:10)
+pollutantmean <- function(directory, pollutant, id = 1){#
+  fullfiles <- list.files(directory, full.names = TRUE)#
+  datatable <-data.frame()#
+  for (i in 1:id){#
+    datatable<-rbind(datatable, read.csv(fullfiles[i]))#
+  }#
+  mean(datatable[,pollutant],na.rm=TRUE)#
+}
+source("http://d396qusza40orc.cloudfront.net/rprog%2Fscripts%2Fsubmitscript1.R")
+source("submitscript1.R")
+submit()
+submit
+submit()
+source("submitscript1.R")
+submit("submitscript1.R")
+source("submitscript1.R")
+submit()
+setwd()
+source("pollutantmean.R")
+submit()
+complete <- function (directory, id =1:332){#
+  fullfiles <- list.files(directory, full.names = TRUE)#
+  datatable <- data.frame()#
+  for (i in id) {#
+    data_i <- read.csv(fullfiles[i])#
+    nobs <- sum (data_i, na.rm=TRUE)#
+    tmp <-data.frame(i,nobs)#
+    datatable <-rbind (datatable, tmp)#
+  }#
+  colnames(datatable) <- c("id","nobs")#
+  datatable#
+}
+complete("specdata",1)
+fullfiles <- list.files(directory, full.names = TRUE)
+fullfiles <- list.files("specdata", full.names = TRUE)
+data_1 <- read.csv(fullfiles[1])
+nobs <- sum (data_1, na.rm=TRUE)
+nobs <- sum [,data_i, na.rm=TRUE]
+nobs <- sum [data_i, na.rm=TRUE]
+nobs <- sum ((data_i), na.rm=TRUE)
+nobs <- sum ((data_1), na.rm=TRUE)
+nobs <- sum [data_1, na.rm=TRUE]
+nobs<-sum(data1(na.rm=TRUE))
+nobs<-sum(data_1(na.rm=TRUE))
+is.na(data_1)
+nobs<-sum(is.na(data_1))
+nobs
+nobs<-sum(!is.na(data_1))
+nobs
+nobs<-sum(!is.na(data_1[,"sulface"]))
+nobs<-sum(!is.na(data_1[,"sulfate"]))
+nobs
+complete <- function (directory, id =1:332){#
++   fullfiles <- list.files(directory, full.names = TRUE)#
++   datatable <- data.frame()#
++   for (i in id) {#
++     data_i <- read.csv(fullfiles[i])#
++     nobs<-sum(!is.na(data_i))#
++     tmp <-data.frame(i,nobs)#
++     datatable <-rbind (datatable, tmp)#
++     #
++   }#
++   colnames(datatable) <- c("id","nobs")#
++   datatable#
++ }
+complete <- function (directory, id =1:332){#
+  fullfiles <- list.files(directory, full.names = TRUE)#
+  datatable <- data.frame()#
+  for (i in id) {#
+    data_i <- read.csv(fullfiles[i])#
+    nobs <- sum (!is.na(data_i[,"sulfate"]))#
+    tmp <-data.frame(i,nobs)#
+    datatable <-rbind (datatable, tmp)#
+  }#
+  colnames(datatable) <- c("id","nobs")#
+  datatable#
+}
+complete("specdata",1)
+complete("specdata", c(2, 4, 8, 10, 12))
+source("complete.R")
+submit()
+complete <- function (directory, id =1:332){#
+  fullfiles <- list.files(directory, full.names = TRUE)#
+  datatable <- data.frame()#
+  for (i in id) {#
+    data_i <- read.csv(fullfiles[i])#
+    nobs <- sum (!is.na(data_i[,"sulfate"]))#
+    tmp <-data.frame(i,nobs)#
+    datatable <-rbind (datatable, tmp)#
+  }#
+  colnames(datatable) <- c("id","nobs")#
+  datatable#
+}
+complete("specdata",1)
+complete("specdata", 30:25)
+complete("specdata", 3)
+submit()
+complete <- function (directory, id =1:332){#
+  fullfiles <- list.files(directory, full.names = TRUE)#
+  datatable <- data.frame()#
+  for (i in id) {#
+    data_i <- read.csv(fullfiles[i])#
+    nobs <- 0.5*sum (!is.na(data_i[,"sulfate","nitrate"]))#
+    tmp <-data.frame(i,nobs)#
+    datatable <-rbind (datatable, tmp)#
+  }#
+  colnames(datatable) <- c("id","nobs")#
+  datatable#
+}
+complete("specdata",1)
+nobs<-!is.na(data_1[,"sulfate","nitrate"])
+complete <- function (directory, id =1:332){#
+  fullfiles <- list.files(directory, full.names = TRUE)#
+  datatable <- data.frame()#
+  for (i in id) {#
+    data_i <- read.csv(fullfiles[i])#
+    nobs <- sum (complete.cases(data_i))#
+    tmp <-data.frame(i,nobs)#
+    datatable <-rbind (datatable, tmp)#
+  }#
+  colnames(datatable) <- c("id","nobs")#
+  datatable#
+}
+complete("specdata",1)
+complete.cases()
+complete.cases()?
+complete.cases()
+source("complete.R")
+submit()
+corr <- function(directory, threshold = 0){#
+  fullfiles <-list.files(directory, full.names = TRUE)#
+  vector1<-verctor(mode ="numeric",length=0)#
+for (i in 1:332){#
+  data_i <- read.csv (fullfiles[i])#
+  totalobe <-sum (!is.na(data_i[,"sulfate"]) &!is.na(data_i[,"nitrate"])#
+  if (totalobe>threshold){#
+    sulfate_i <-data_i[,"sulfate"]#
+    nitrate_i <-data_i[,"nitrate"]#
+    vector1 <-c(vector1, cor(sulfate_i,nitrate_i))#
+  }#
+}#
+  vector1#
+}
+corr <- function(directory, threshold = 0){#
+  fullfiles <-list.files(directory, full.names = TRUE)#
+  datatable<-verctor(mode ="numeric",length=0)#
+  file_l <- length (fullfiles)#
+for (i in 1:file_l){#
+  data_i <- read.csv (fullfiles[i])#
+  totalobe <-sum (!is.na(data_i[,"sulfate"]) &!is.na(data_i[,"nitrate"])#
+  if (totalobe>threshold){#
+    sulfate_i <-data_i[,"sulfate"]#
+    nitrate_i <-data_i[,"nitrate"]#
+    datatable <-c(datatable, cor(sulfate_i,nitrate_i))#
+  }#
+}#
+  datatable#
+}
+cor()
+?cor
+corr <- function(directory, threshold = 0){#
+  fullfiles <-list.files(directory, full.names = TRUE)#
+  datatable<-vector(mode ="numeric",length=0)#
+  file_l <- length (fullfiles)#
+for (i in 1:file_l){#
+  data_i <- read.csv (fullfiles[i])#
+  totalobe <-sum (!is.na(data_i[,"sulfate"]) &!is.na(data_i[,"nitrate"])#
+  if (totalobe>threshold){#
+    sulfate_i <-data_i[,"sulfate"]#
+    nitrate_i <-data_i[,"nitrate"]#
+    datatable <-c(datatable, cor(sulfate_i,nitrate_i))#
+  }#
+}#
+  datatable#
+}
+fullfiles <-list.files(directory, full.names = TRUE)
+fullfiles <-list.files("specdata", full.names = TRUE)
+file_l <- length (fullfiles)
+file_l
+corr <- function(directory, threshold = 0){#
+  fullfiles <-list.files(directory, full.names = TRUE)#
+  datatable<-vector(mode ="numeric",length=0)#
+  file_l <- length (fullfiles)#
+for (i in 1:file_l){#
+  data_i <- read.csv (fullfiles[i])#
+  totalobe <-sum ((!is.na(data_i[,"sulfate"])) &(!is.na(data_i[,"nitrate"])))#
+  if (totalobe>threshold){#
+    sulfate_i <-data_i[,"sulfate"]#
+    nitrate_i <-data_i[,"nitrate"]#
+    datatable <-c(datatable, cor(sulfate_i,nitrate_i))#
+  }#
+}#
+  datatable#
+}
+cr <- corr("specdata", 150)
+head(cr)
+summary(cr)
+totalobe <-sum ((!is.na(data_1[,"sulfate"])) &(!is.na(data_1[,"nitrate"])))
+totalobe
+totalobe <-sum ((!is.na(data_i[,"sulfate"])),(!is.na(data_i[,"nitrate"])))
+totalobe <-sum ((!is.na(data_1[,"sulfate"])),(!is.na(data_1[,"nitrate"])))
+totalobe
+corr <- function(directory, threshold = 0){#
+  fullfiles <-list.files(directory, full.names = TRUE)#
+  datatable<-vector(mode ="numeric",length=0)#
+  file_l <- length (fullfiles)#
+for (i in 1:file_l){#
+  data_i <- read.csv (fullfiles[i])#
+  totalobe <-sum ((!is.na(data_i[,"sulfate"])),(!is.na(data_i[,"nitrate"])))#
+  if (totalobe>threshold){#
+    sulfate_i <-data_i[,"sulfate"]#
+    nitrate_i <-data_i[,"nitrate"]#
+    datatable <-c(datatable, cor(sulfate_i,nitrate_i))#
+  }#
+}#
+  datatable#
+}
+cr <- corr("specdata", 150)
+head(cr)
+corr <- function(directory, threshold = 0){#
+  fullfiles <-list.files(directory, full.names = TRUE)#
+  datatable<-vector(mode ="numeric",length=0)#
+  file_l <- length (fullfiles)#
+for (i in 1:file_l){#
+  data_i <- read.csv (fullfiles[i])#
+  totalobe <-sum ((!is.na(data_i[,"sulfate"])) &(!is.na(data_i[,"nitrate"])))#
+  if (totalobe>threshold){#
+    sulfate_i <-data_i[,"sulfate"]#
+    nitrate_i <-data_i[,"nitrate"]#
+    datatable <-c(datatable, cor(sulfate_i,nitrate_i))#
+  }#
+}#
+  datatable#
+}
+cr <- corr("specdata", 5000)
+head(cr)
+summary(cr)
+cr <- corr("specdata")
+summary(cr)
+corr <- function(directory, threshold = 0){#
+  fullfiles <-list.files(directory, full.names = TRUE)#
+  vector1<-verctor(mode ="numeric",length=0)#
+for (i in 1:332){#
+  data_i <- read.csv (fullfiles[i])#
+  cobe <-sum ((data_i[,"sulfate"], na.rm=TRUE) &(data_i[,"nitrate"], na.rm=TRUE))#
+  if (cobe>threshold){#
+    sulfate_i <-data_i[,"sulfate"]#
+    nitrate_i <-data_i[,"nitrate"]#
+    vector1 c(vector1, cor(data_i("sulfate",nitrate)))#
+  }#
+}#
+  vector1#
+}
+corr <- function(directory, threshold = 0){#
+  fullfiles <-list.files(directory, full.names = TRUE)#
+  vector1<-verctor(mode ="numeric",length=0)#
+for (i in 1:332){#
+  data_i <- read.csv (fullfiles[i])#
+  cobe <-sum ((data_i[,"sulfate"], na.rm=TRUE) &(data_i[,"nitrate"], na.rm=TRUE))#
+  if (cobe>threshold){#
+    vector1 c(vector1, cor(data_i("sulfate",nitrate)))#
+  }#
+}#
+  vector1#
+}
+corr <- function(directory, threshold = 0){#
+  fullfiles <-list.files(directory, full.names = TRUE)#
+  datatable<-vector(mode ="numeric",length=0)#
+  file_l <- length (fullfiles)#
+for (i in 1:file_l){#
+  data_i <- read.csv (fullfiles[i])#
+  totalobe <-sum ((!is.na(data_i[,"sulfate"])) &(!is.na(data_i[,"nitrate"])))#
+  if (totalobe>threshold){#
+    datatable <-c(datatable, cor(data_i("sulfate","nitrate")))#
+  }#
+}#
+  datatable#
+}
+cr <- corr("specdata", 150)
+corr <- function(directory, threshold = 0){#
+  fullfiles <-list.files(directory, full.names = TRUE)#
+  datatable<-vector(mode ="numeric",length=0)#
+  file_l <- length (fullfiles)#
+for (i in 1:file_l){#
+  data_i <- read.csv (fullfiles[i])#
+  totalobe <-sum ((!is.na(data_i[,"sulfate"])) &(!is.na(data_i[,"nitrate"])))#
+  if (totalobe>threshold){#
+    datatable <-c(datatable, cor(data_i["sulfate","nitrate"]))#
+  }#
+}#
+  datatable#
+}
+cr <- corr("specdata", 150)
+data_1("sulfate","nitrate")
+data_1 <-read.csv (fullfiles[1])
+data_1("sulfate","nitrate")
+corr <- function(directory, threshold = 0){#
+  fullfiles <-list.files(directory, full.names = TRUE)#
+  datatable<-verctor(mode ="numeric",length=0)#
+for (i in 1:332){#
+  data_i <- read.csv (fullfiles[i])#
+  cobe <-sum ((data_i[,"sulfate"], na.rm=TRUE) &(data_i[,"nitrate"], na.rm=TRUE))#
+  if (cobe>threshold){#
+    sulfate_i <-data_i[,"sulfate",na.rm=TRUE]#
+    nitrate_i <-data_i[,"nitrate",na.rm=TRUE]#
+    datatable <- c(datatable, cor(sulfate_i,nitrate_i))#
+  }#
+}#
+  datatable#
+}
+corr <- function(directory, threshold = 0){#
+  fullfiles <-list.files(directory, full.names = TRUE)#
+  datatable<-verctor(mode ="numeric",length=0)#
+for (i in 1:332){#
+  data_i <- read.csv (fullfiles[i])#
+  totalobe <-sum ((data_i[,"sulfate"], na.rm=TRUE) &(data_i[,"nitrate"], na.rm=TRUE))#
+  if (totalobe>threshold){#
+    sulfate_i <-data_i[,"sulfate",na.rm=TRUE]#
+    nitrate_i <-data_i[,"nitrate",na.rm=TRUE]#
+    datatable <- c(datatable, cor(sulfate_i,nitrate_i))#
+  }#
+}#
+  datatable#
+}
+corr <- function(directory, threshold = 0){#
+  fullfiles <-list.files(directory, full.names = TRUE)#
+  datatable<-verctor(mode ="numeric",length=0)#
+  file_l <- length (fullfiles)#
+for (i in 1:file_l){#
+  data_i <- read.csv (fullfiles[i])#
+  totalobe <-sum ((data_i[,"sulfate"], na.rm=TRUE) &(data_i[,"nitrate"], na.rm=TRUE))#
+  if (totalobe>threshold){#
+    sulfate_i <-data_i[,"sulfate",na.rm=TRUE]#
+    nitrate_i <-data_i[,"nitrate",na.rm=TRUE]#
+    datatable <- c(datatable, cor(sulfate_i,nitrate_i))#
+  }#
+}#
+  datatable#
+}
+sulfate_1 <-data_1[,"sulfate",na.rm=TRUE]
+sulfate_1 <-data_1("sulfate",na.rm=TRUE)
+sulfate_1 <-data_1[,"sulfate",na.rm=TRUE]
+sulfate_1 <-!is.na (data_1[,"sulfate"]
+)
+sulfate_1
+sulfate_1 <- complete.cases(data_1[,"sulfate"])
+sulfate_1
+sulfate_1<-data_1[,"sulfate"]
+sulfate_1[]!is.na(sulfate_1)]
+sulfate_1[!is.na(sulfate_1)]
+corr <- function(directory, threshold = 0){#
+  fullfiles <-list.files(directory, full.names = TRUE)#
+  datatable<-verctor(mode ="numeric",length=0)#
+  file_l <- length (fullfiles)#
+for (i in 1:file_l){#
+  data_i <- read.csv (fullfiles[i])#
+  totalobe <-sum ((!is.na(data_i[,"sulfate"])) &(!is.na(data_i[,"nitrate"])))#
+  if (totalobe>threshold){#
+    sulfate_i <-data_i[,"sulfate"]#
+    nitrate_i <-data_i[,"nitrate"]#
+    datatable <- c(datatable, cor(sulfate_i[!is.na(sulfate_i)],nitrate_i[!is.na(nitrate_i)]))#
+  }#
+}#
+  datatable#
+}
+cr <- corr("specdata", 150)
+corr <- function(directory, threshold = 0){#
+  fullfiles <-list.files(directory, full.names = TRUE)#
+  datatable<-vector(mode ="numeric",length=0)#
+  file_l <- length (fullfiles)#
+for (i in 1:file_l){#
+  data_i <- read.csv (fullfiles[i])#
+  totalobe <-sum ((!is.na(data_i[,"sulfate"])) &(!is.na(data_i[,"nitrate"])))#
+  if (totalobe>threshold){#
+    sulfate_i <-data_i[,"sulfate"]#
+    nitrate_i <-data_i[,"nitrate"]#
+    datatable <- c(datatable, cor(sulfate_i[!is.na(sulfate_i)],nitrate_i[!is.na(nitrate_i)]))#
+  }#
+}#
+  datatable#
+}
+cr <- corr("specdata", 150)
+corr <- function(directory, threshold = 0){#
+  fullfiles <-list.files(directory, full.names = TRUE)#
+  datatable<-vector(mode ="numeric",length=0)#
+  file_l <- length (fullfiles)#
+for (i in 1:file_l){#
+  data_i <- read.csv (fullfiles[i])#
+  totalobe <-sum ((!is.na(data_i[,"sulfate"])) &(!is.na(data_i[,"nitrate"])))#
+  if (totalobe>threshold){#
+    sulfate_i <-data_i[,"sulfate"]#
+    nitrate_i <-data_i[,"nitrate"]#
+    datatable <- c(datatable, cor(sulfate_i[!is.na(sulfate_i)],nitrate_i[!is.na(nitrate_i)])#
+  }#
+}#
+  datatable#
+}
+corr <- function(directory, threshold = 0){#
+  fullfiles <-list.files(directory, full.names = TRUE)#
+  datatable<-vector(mode ="numeric",length=0)#
+  file_l <- length (fullfiles)#
+for (i in 1:file_l){#
+  data_i <- read.csv (fullfiles[i])#
+  totalobe <-sum ((!is.na(data_i[,"sulfate"])) &(!is.na(data_i[,"nitrate"])))#
+  if (totalobe>threshold){#
+    sulfate_i <-data_i[,"sulfate"]#
+    nitrate_i <-data_i[,"nitrate"]#
+    datatable <- c(datatable, cor((sulfate_i[!is.na(sulfate_i)]),(nitrate_i[!is.na(nitrate_i)])))#
+  }#
+}#
+  datatable#
+}
+cr <- corr("specdata", 150)
+sum(!is.na(sulfate_1))
+sum(!is.na(nitrate_1))
+nitrate_1 <- data_1(,"nitrate")
+data_1 <- read.csv (fullfiles[1])
+nitrate_1 <- data_1[,"nitrate"]
+sum(!is.na(nitrate_1))
+aa<-complete.cases(data_1)
+aa
+aa<-data_1[complete.cases(data_1),]
+aa
+corr <- function(directory, threshold = 0){#
+  fullfiles <-list.files(directory, full.names = TRUE)#
+  datatable<-vector(mode ="numeric",length=0)#
+  file_l <- length (fullfiles)#
+for (i in 1:file_l){#
+  data_i <- read.csv (fullfiles[i])#
+  totalobe <-sum ((!is.na(data_i[,"sulfate"])) &(!is.na(data_i[,"nitrate"])))#
+  if (totalobe>threshold){#
+    subtable<-data_i[completecases(data_i)]#
+    sulfate_i<- subtable[,sulfate]#
+    nitrate_i<- subtable[,nitrate]#
+    datatable <- c(datatable, cor(sulfate_i,nitrate_i))#
+  }#
+}#
+  datatable#
+}
+cr <- corr("specdata", 150)
+corr <- function(directory, threshold = 0){#
+  fullfiles <-list.files(directory, full.names = TRUE)#
+  datatable<-vector(mode ="numeric",length=0)#
+  file_l <- length (fullfiles)#
+for (i in 1:file_l){#
+  data_i <- read.csv (fullfiles[i])#
+  totalobe <-sum ((!is.na(data_i[,"sulfate"])) &(!is.na(data_i[,"nitrate"])))#
+  if (totalobe>threshold){#
+    subtable<-data_i[completecases(data_i),]#
+    sulfate_i<- subtable[,sulfate]#
+    nitrate_i<- subtable[,nitrate]#
+    datatable <- c(datatable, cor(sulfate_i,nitrate_i))#
+  }#
+}#
+  datatable#
+}
+cr <- corr("specdata", 150)
+corr <- function(directory, threshold = 0){#
+  fullfiles <-list.files(directory, full.names = TRUE)#
+  datatable<-vector(mode ="numeric",length=0)#
+  file_l <- length (fullfiles)#
+for (i in 1:file_l){#
+  data_i <- read.csv (fullfiles[i])#
+  totalobe <-sum ((!is.na(data_i[,"sulfate"])) &(!is.na(data_i[,"nitrate"])))#
+  if (totalobe>threshold){#
+    subtable<-data_i[complete.cases(data_i),]#
+    sulfate_i<- subtable[,sulfate]#
+    nitrate_i<- subtable[,nitrate]#
+    datatable <- c(datatable, cor(sulfate_i,nitrate_i))#
+  }#
+}#
+  datatable#
+}
+cr <- corr("specdata", 150)
+corr <- function(directory, threshold = 0){#
+  fullfiles <-list.files(directory, full.names = TRUE)#
+  datatable<-vector(mode ="numeric",length=0)#
+  file_l <- length (fullfiles)#
+for (i in 1:file_l){#
+  data_i <- read.csv (fullfiles[i])#
+  totalobe <-sum ((!is.na(data_i[,"sulfate"])) &(!is.na(data_i[,"nitrate"])))#
+  if (totalobe>threshold){#
+    subtable<-data_i[complete.cases(data_i),]#
+    sulfate_i<- subtable[,"sulfate"]#
+    nitrate_i<- subtable[,"nitrate"]#
+    datatable <- c(datatable, cor(sulfate_i,nitrate_i))#
+  }#
+}#
+  datatable#
+}
+cr <- corr("specdata", 150)
+head(cr)
+source(Corr.R)
+source("corr.R")
+submit()
+x <- list(a = matrix(1:4, 2, 2), b = matrix(1:6, 3, 2))
+lapply(x, function(elt) elt[,1])
+?lapply
+printmessage2 <- function(x) {if(is.na(x))print("x is a missing value!")else if(x > 0)print("x is greater than zero")elseprint("x is less than or equal to zero")invisible(x)
+}
+printmessage2(-1)
+mean (x)
+traceback(x)
+traceback()
+mean (x)
+traceback()
+mean (x)
+traceback()
+sum(x)
+traceback()
+lm(y - x)
+traceback()
+debug(lm)
+lm(y-x)
+n
+library(datasets)
+data(iris)
+?iris
+a <- split(iris,iris$Species)
+lappy(s, function(x),colMean(x[,c(,'Sepal.Length')]),na.rm=True)
+traceback()
+lappy(s, function(x) colMean(x[,c(,'Sepal.Length')]),na.rm=True)
+lapply(s, function(x) colMean(x[,c(,'Sepal.Length')]),na.rm=True)
+lapply(a, function(x),colMean(x[,c(,'Sepal.Length')]),na.rm=True)
+lapply(a, function(x) colMean(x[,c(,'Sepal.Length')]),na.rm=True)
+lapply(a, function(x) colMean(x[,c(,'Sepal.Length')]),na.rm=TRUE)
+lapply(a, function(x) colMean(x[,c("Sepal.Length")],na.rm=True))
+lapply(a, function(x) colMeans(x[,c("Sepal.Length")],na.rm=True))
+a
+sapply(a, function(x) colMeans(x[,c("Sepal.Length")],na.rm=True))
+x <- (,)
+x <- (50,5)
+sapply(a, function(x) colMeans(x[,c("Sepal.Length")],na.rm=True,drop=FALSE))
+sapply(a, function(x) colMeans(x[,c("Sepal.Length"),na.rm=True,drop=FALSE])
+f
+sapply(a, function(x) colMeans(x[,c("Sepal.Length"),na.rm=True,drop=FALSE]))
+sapply(a, function(x) colMeans(Sepal.Length[,x,drop=FALSE, na.rm=TRUE]))
+lapply(a, function(x) colMeans(x[,"Sepal.Length"],na.rm=True))
+lapply(a, function(x) colMeans(x[,Sepal.Length],na.rm=True))
+lapply(a, function(x) colMeans(x[,c('Sepal.Length')],na.rm=True))
+lapply(a, function(M) colMeans(M[,c("Sepal.Length")],na.rm=True))
+lapply(a, function(x) colMeans(x[,c('Sepal.Length')]))
+lapply(a, function(x) colMeans(x[,c('Sepal.Length')],na.rm=True))
+library(datasets)
+data(iris)
+split(iris, iris$species)
+a<- split(iris, iris$Species)
+lapply(a, function(x) colMeans(x[,c("Sepal.Length")]))
+lapply(a, colMeans[,c("Sepal.Length")]))
+lapply(a, colMeans[,c("Sepal.Length")])
+lapply(a, colMeans[,"Sepal.Length"])
+a
+apply(a,2,mean)
+lapply(a, function(x) colMeans(x[,c('Sepal.Length')],na.rm=True,is.numeric=TRUE))
+lapply(a, function(x) colMeans(x[,c('Sepal.Length'),is.numeric=TRUE],na.rm=TRUE))
+lapply(a, function(x) colMeans(x[,c('Sepal.Length')],na.rm=TRUE))
+lapply(a, function(x) colMeans(x[,c('Sepal.Length'),na.rm=TRUE,,is.numeric=TRUE))
+mean(a$virginica$Sepal.Length)
+library(datasets)
+data(mtcars)
+?mtcars
+split(mtcars, mtcars$cyl)
+lapply(split(mtcars, mtcars$cyl), function(x) colMeans(x[,c(,"cyl")]))
+lapply(split(mtcars, mtcars$cyl), function(x) colMeans(x[,c("cyl")]))
+b<-split(mtcars, mtcars$cyl)
+mean(b$4$hp)-mean(b$8$hp)
+mean(b$'4'$hp)-mean(b$'8'$hp)
+debug(ls)
+ls
+lapply(a, function(x) colMeans(x[,c('Sepal.Length')],na.rm=TRUE, is.numeric=FALSE))
+lapply(a, function(x) colMeans(x[,c("Sepal.Length")],na.rm=TRUE,is.numeric=FALSE))
+sapply(a,length)
+sapply(a,mean)
+sapply(a,colmeans)
+sapply(a,colmeans(,c("Sepal.Length")))
+sapply(a,colMeans(,c("Sepal.Length")))
+sapply(a,colMeans)
+m<-split(iris, iris$species, is.numeric=TRUE)
+m<-a(is.numeric= TRUE)
+m<-a$virginica
+m
+colMeans(m)
+colMeans(m[,c("Petal.Width")])
+colMeans (m, na.rm=True)
+colMeans (m, na.rm=TRUE)
+colMeans (m, is.numeric=FALSE)
+m.numbers = sapply (m,as.numeric)
+colMeans (m)
+m
+colMeans (m.numbers)
+lapply(m.numbers, function(x) colMeans(x[,c('Sepal.Length')]))
+a.numbers=sapply(a,as.numeric)
+a.numbers<-sapply(a,as.numeric)
+getwd()
+setwd("/Users/xuzou/ProgrammingAssignment2")
+git add cachematrix.R
+getwd()
+getwd("/Users/xuzou")
+setwd("/Users/xuzou")
+git add
+git init
+setwd("/Users/xuzou/ProgrammingAssignment2")
+$ git add cachematrix.R
+$ git init
+source("cachematrix.R")
+a<- makeCacheMatrix(matrix(1:4,2,2))
+a
+a$get()
+cacheSolve(a)
